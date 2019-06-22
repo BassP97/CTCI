@@ -10,6 +10,7 @@ def prod(array):
     else:
         currTotal = 0
     return currTotal
+    
 #brute force n^3, very bad!
 def bruteForce(toCheck):
     currMax = -100000
@@ -29,9 +30,7 @@ def better(toCheck):
     start = 0
     end = 0
     currMax = toCheck[0]
-    #find all zeroes in the list and make sub arrays of the numbers between the
-    #zeroes - this is because no array ought to contain a zero if there are
-    #positive numbers available
+
     for i in range(0,len(toCheck)):
         end = i
         if toCheck[i] == 0:
