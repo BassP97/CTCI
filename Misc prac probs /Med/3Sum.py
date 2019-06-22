@@ -10,6 +10,7 @@ def sumArr(array):
     return currTotal
 
 #recursive solution assuming sumArray always contains 3 or more elements
+#does double count - so that's not great
 def main(sumArray):
     if len(sumArray) == 3:
         if (sumArr(sumArray) == 0):
