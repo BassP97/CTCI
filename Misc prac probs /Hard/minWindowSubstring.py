@@ -8,7 +8,7 @@ Input: S = "ADOBECODEBANC", T = "ABC"
 Output: "BANC"
 
 """
-
+"""
 #failed attempt
 def minWindowSubstr(inputStr,toFind):
     inputSet = {}
@@ -59,7 +59,43 @@ def minWindowSubstr(inputStr,toFind):
             return ""
         else:
             return inputStr[left:right]
+"""
+def minWindowSubstr2(inputStr,toFind):
+    left = 0
+    right = 0
+    lettersWeNeed = {}
+    currSmallestSol = ""
+    for i in toFind:
+        if i in lettersWeNeed.keys():
+            lettersWeNeed[i] = lettersWeNeed[i]+1
+        else:
+            lettersWeNeed[i] = 1
+    temp = lettersWeNeed.copy()
+    while (left!=len(inputStr) and right!=len(inputStr)):
+        print(left,right)
+        print(temp)
+        if not temp:
+            print("evaluatin!")
+            if (right-left)<len(currSmallestSol) or currSmallestSol == "":
+                print("checkin!")
+                currSmallestSol = inputStr[left:right+1]
+                print("smallest sol:",currSmallestSol)
+            temp = lettersWeNeed.copy()
+            left = left+1
+            while (inputStr[left] not in temp.keys() or left == 0) and left < right:
+                left = left+1
+            right = left
+            temp[inputStr[left]] = temp[inputStr[left]]-1
+            if temp[inputStr[left]] == 0:
+                temp.pop(inputStr[left])
+
+        right = right+1
+        if right!=len(inputStr) and inputStr[right] in temp:
+            temp[inputStr[right]] = temp[inputStr[right]]-1
+            if temp[inputStr[right]] == 0:
+                temp.pop(inputStr[right])
+    return currSmallestSol
 
 
 
-print(minWindowSubstr("ADOBECODEBANC", "ABC"))
+print(minWindowSubstr2("ADOBECODEBANC", "ABC"))
