@@ -6,8 +6,6 @@ The word can be constructed from letters of sequentially adjacent cell, where
 cell may not be used more than once.
 """
 
-https://leetcode.com/problems/word-search/
-
 def main(board, word):
     potentialStart = []
     for i in range(0, len(board)):
@@ -45,7 +43,6 @@ def main(board, word):
             try:
                 if (i == len(word)):
                     return True
-            if
     return False
 
 assert(main([

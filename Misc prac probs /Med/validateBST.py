@@ -11,7 +11,7 @@ The binary tree is stored in an array as follows:
 
 """
 
-def main(bst):
+def main(bst):s
     for i in range(0, len(bst)):
         if ((2*i)+1 <= len(bst)-1):
             if((bst[(2*i)+1] is not None) and (bst[(2*i)+1]>bst[i])):
