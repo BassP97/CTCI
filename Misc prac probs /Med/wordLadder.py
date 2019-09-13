@@ -33,7 +33,7 @@ def wordLadder(wordList, beginWord, endWord):
                         wordList.remove(j)
                     if i == endWord:
                         return n+1
-                        
+
         prevWords = copy.deepcopy(nextWords)
     print("cant find thing")
     return -1
