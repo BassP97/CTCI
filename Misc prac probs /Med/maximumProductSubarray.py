@@ -10,7 +10,7 @@ def prod(array):
     else:
         currTotal = 0
     return currTotal
-    
+
 #brute force n^3, very bad!
 def bruteForce(toCheck):
     currMax = -100000
@@ -61,7 +61,6 @@ def better(toCheck):
         if checkVal>currMax:
             currMax = checkVal
     return currMax
-
 
 
 arr1 = [2,3,-2,4]
