@@ -1,5 +1,6 @@
 """
-Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
+Given a positive integer n, find the least number of perfect square numbers
+(for example, 1, 4, 9, 16, ...) which sum to n.
 
 Example 1:
 
@@ -13,3 +14,11 @@ Input: n = 13
 Output: 2
 Explanation: 13 = 4 + 9.
 """
+import math
+
+def sumSquares(num):
+    if num == 0:
+        return ""
+    sqrtFloat = math.sqrt(num)
+    sqrt = int(float)
+    return str(sqrt) + "+" + sumSquares(num-(sqrt*sqrt))
