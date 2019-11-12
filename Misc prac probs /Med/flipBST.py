@@ -11,12 +11,13 @@ flip equivalent.  The trees are given by root nodes root1 and root2.
 """
 
 def flipBST(node1, node2):
-    if node1 is None and node2 is not None:
-        return False
-    if node1 is not None and node2 is None:
-        return False
     if node1 is None and node2 is None:
         return True
+    if node1 is None or node2 is None:
+        return False
+    if node1.value != node2.value:
+        return False
+    
     return (flipBST(node1.left, node2.right) and flipBST(node1.right, node2.left)) or (flipBST(node1.left, node2.left) and flipBST(node1.right, node2.right))
     
 
