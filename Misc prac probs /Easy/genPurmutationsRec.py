@@ -15,7 +15,4 @@ def genPerms(string):
             retSet.add(item[:i]+char+item[i:])
     return retSet
 
-print(genPerms("agbc"))
-
-            
-
+print(genPerms("agbcasdf;asdfklasdfjkl;fjasdl;fjasdlkfsadkjlfjsdkadfsajkfsdajkdfasj;dsfajklfsdakl;jadfs;dfsdfsa;l"))

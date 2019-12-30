@@ -16,5 +16,3 @@ start_time = time.time()
 print(computeFib(38))
 elapsed_time = time.time() - start_time
 print(elapsed_time)
-
-
