@@ -35,7 +35,7 @@ def twoSat(clauses):
             else:
                 notEqualSet[clause[3]] = set(clause[0])
 
-            if clauxse[0] in equalSet.keys():
+            if clause[0] in equalSet.keys():
                 equalSet[clause[0]].update(notEqualSet[clause[0]])
                 if clause[3] in equalSet[clause[0]]:
                     return False

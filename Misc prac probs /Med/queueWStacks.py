@@ -21,7 +21,7 @@ class Stack(object):
     def pop(self):
         """Remove and return the last item"""
         # If the stack is empty, return None
-        # (it would also be reasonable to throw an exception)
+        # (it would also be reasonable to throw an exception
         if not self.items:
             return None
 
