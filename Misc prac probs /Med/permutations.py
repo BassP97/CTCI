@@ -1,28 +1,31 @@
 """
 Given a collection of distinct integers, return all possible permutations.
+
+Example:
+
+Input: [1,2,3]
+Output:
+[
+  [1,2,3],
+  [1,3,2],
+  [2,1,3],
+  [2,3,1],
+  [3,1,2],
+  [3,2,1]
+]
 """
-import copy
 
-class permute(object):
-    toRet = []
-
-    def __init__(self):
-        self.toRet = []
-
-    def permWrapper(self, objs):
-        toRet = []
-        self.perm(objs, [])
-        return toRet
-
-    def perm(self, objs, currPerm):
-        if len(objs) == 0:
-            self.toRet.append(currPerm)
-        else:
-            for i in range(0,len(objs)):
-                temp = copy.deepcopy(currPerm)
-                temp.append(objs[i])
-                self.perm(objs[0:i]+objs[i+1:],temp)
-        print(self.toRet)
-
-permObj = permute()
-assert(permObj.permWrapper([1,2,3]))
+def permutations(nums):
+    if len(nums) == 1:
+        return [nums]
+    else:
+        solArr = []
+        for i in range(len(nums)):
+            temp = nums[:i]+nums[i+1:]
+            retPerms = permutations(temp)
+            print(retPerms)
+            for perm in retPerms:
+                perm.insert(0,nums[i])
+            solArr = solArr+retPerms
+        return solArr
+print(permutations([1,2,3,4,5]))

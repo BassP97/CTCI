@@ -10,7 +10,6 @@ def main(input, dict):
     for i in range(0,len(input)+1):
         for j in range(i):
             print(input[j:i])
-
             if ((seg[j]) and (input[j:i] in dict)):
                 print(i)
                 seg[i] = True

@@ -41,6 +41,7 @@ def sumDP(nums):
     for i in range(1,len(nums)):
         if nums[i-1]>0:
             nums[i] = nums[i]+nums[i-1]
+    print(nums)
     return max(nums)
 
-print(sumDP([-2,1]))
+print(sumDP([-2,1,8,-1,3,-5,3,2,8,-2,3,-4,-4,1]))
