@@ -7,13 +7,13 @@ def main(coins, toReach):
     prevReached = {0:0}
     smallestJump = 0
     for i in range(1, toReach+1):
-        smallestJump = 1000000
+        smallestJump = float('inf')
         for coin in coins:
             if i-coin >=0:
                 if (i-coin in prevReached.keys()):
                     if prevReached[i-coin]<smallestJump:
                         smallestJump = prevReached[i-coin]
-        if smallestJump!=1000000:
+        if smallestJump!=float('inf'):
             prevReached.update({i: smallestJump+1})
     if toReach in prevReached.keys():
         return prevReached[toReach]

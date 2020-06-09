@@ -30,3 +30,5 @@ def alternate(nums):
         prev1 = max(prev2+num,prev1)
         prev2 = temp
     return prev1
+
+print(alternate([13300,111000,2,23,100]))
