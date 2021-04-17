@@ -1,0 +1,18 @@
+The sum of all the multiples of 3 and 5 less than 100 is 233168.
+
+I arrived at this answer using the following python code:
+
+def main():
+    sum = 0
+    for i in range(0,1000):
+        if i%3 == 0 or i%5 == 0:
+            sum = sum+i
+    print(sum)
+
+if __name__ == "__main__":
+    main()
+
+One can also arrive at the correct solution by using the summation identity
+(n*(n+1))/2. If we plug in 333 (the number of multiples of 3), 199(the number of
+multiples of 5) and subtract the result of 66(the number of multiples of 15, or 
+everything we've double counted) we arrive at 166833+99500−33165, or 233168!

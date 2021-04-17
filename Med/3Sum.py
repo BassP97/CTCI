@@ -7,19 +7,18 @@ Note:
 
 The solution set must not contain duplicate triplets.
 """
+
+
 def threeSum(arr):
     sumSet = {}
-    for i in range(0,len(arr)):
+    for i in range(0, len(arr)):
         for j in range(i+1, len(arr)):
             if (i+j) not in sumSet.keys():
                 sumSet[i+j] = []
             sumSet[i+j].append(i)
             sumSet[i+j].append(j)
     retArr = []
-    for i in range(0,len(arr)):
+    for i in range(0, len(arr)):
         if arr[i] in sumSet.keys():
             retArr.append([i]+sumSet[i])
     return retArr
-
-
-    

@@ -17,6 +17,27 @@ Explanation:
 8^2 + 2^2 = 68
 6^2 + 8^2 = 100
 1^2 + 0^2 + 0^2 = 1
-
-
 """
+
+def sumBySquares(n):
+    temp = str(n)
+    res = 0
+    for digit in temp:
+        res+=int(digit)**2
+    return res
+
+def isHappyExtraMem(n):
+    happySet = set()
+    currNum = n
+    while currNum!=1 and currNum not in happySet:
+        currNum = sumBySquares(currNum)
+        happySet.add(currNum)
+    return currNum==1
+def isHappyNoExtraMem(n):
+    tortoise = sumBySquares(n)
+    hare = sumBySquares(sumBySquares(n))
+    while tortoise!=hare and hare!=1:
+        tortoise = sumBySquares(n)
+        hare = sumBySquares(sumBySquares(n))
+    return not(hare==1)
+p
